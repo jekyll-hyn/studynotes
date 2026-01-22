@@ -1,0 +1,23 @@
+---
+title: ""
+description: ""
+pubDate: "2026-01-18"
+tags: "xxx,yyy"
+---
+
+```code
+```
+
+<span class="imt1">这是红色文字</span>
+<span class="imt2">这是蓝色文字</span>
+
+install nodejs
+#全局安装wrangler
+npm install -g wrangler
+#局部安装wrangler, 安装在当前项目中
+npm install -D wrangler
+
+npm install astro
+npm install remark-math rehype-katex
+
+npx astro dev

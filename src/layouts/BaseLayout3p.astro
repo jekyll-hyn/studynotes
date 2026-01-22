@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import "katex/dist/katex.min.css";
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { ClientRouter } from "astro:transitions";
+---
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><slot name="title" /></title>
+    <ClientRouter />
+  </head>
+
+  <body>
+    <div class="container">
+    <header class="site-header" transition:persist>
+      <Header />
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" transition:persist>
+        <Sidebar />
+      </aside>
+
+      <main class="content">
+        <slot />
+      </main>
+    </div>
+    </div>
+  </body>
+</html>

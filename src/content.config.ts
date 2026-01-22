@@ -7,11 +7,28 @@ const blog = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
-		description: z.string(),
+		description: z.string().optional(),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		tags: z.preprocess((val) => {
+            if (typeof val === 'string') {
+                // 分割字符串并返回字符串数组
+                return val.split(',').map(s => s.trim()).filter(s => s.length > 0);
+            }
+            if (Array.isArray(val)) {
+                // 如果已经是数组，确保每个元素都是字符串
+                return val.map(v => {
+                    if (typeof v === 'string') return v.trim();
+                    if (typeof v === 'object' && v !== null && 'name' in v) {
+                        return String(v.name).trim();
+                    }
+                    return String(v).trim();
+                }).filter(s => s.length > 0);
+            }
+            return [];
+        }, z.array(z.string()).default([])),
 	}),
 });
 
