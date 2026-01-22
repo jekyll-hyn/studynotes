@@ -1,8 +1,8 @@
 ---
-title: "ChatGpt English Score"
+title: "ChatGpt で英作文を添削"
 description: "How to make a score by AI"
 pubDate: "2026-01-18"
-tags: "AI,English"
+tags: "AI"
 ---
 
 ```code
