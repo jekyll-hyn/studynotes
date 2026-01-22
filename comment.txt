@@ -23,3 +23,5 @@ npm install astro
 npm install remark-math rehype-katex
 
 npx astro dev
+mac
+npm run dev
