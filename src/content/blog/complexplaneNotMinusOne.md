@@ -1,7 +1,7 @@
 ---
 title: "z^8 = 1,なぜ「−1 = −cos0 − i sin0」から解き始めてはいけないのか "
 description: ""
-pubDate: "2026-01-26"
+pubDate: "2026-01-28"
 tags: "複素平面"
 ---
 
