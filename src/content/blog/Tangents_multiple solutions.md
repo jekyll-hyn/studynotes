@@ -1,4 +1,3 @@
-
 ---
 title:  "切線と重解の関係（図形的直感による理解）"
 description: "Tangents_multiple solutions.md"

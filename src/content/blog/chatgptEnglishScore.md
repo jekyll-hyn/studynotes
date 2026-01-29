@@ -1,6 +1,6 @@
 ---
 title: "ChatGpt で英作文を添削"
-description: "chatgptEnglishScore"
+description: "chatgptEnglishScore.md"
 pubDate: "2026-01-18"
 tags: "AI"
 ---
