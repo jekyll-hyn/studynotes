@@ -59,6 +59,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.description {
+				display: block;          /* 让 span 独占一行 */
+				text-align: center;      /* 居中 */
+				margin-top: 0.4em;
+
+				font-size: 0.8rem;       /* 小字 */
+				color: rgb(var(--gray)); /* 灰色 */
+
+				letter-spacing: 0.05em;  /* 日系感，微微拉开 */
+			}
 		</style>
 	</head>
 

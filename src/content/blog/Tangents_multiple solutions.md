@@ -1,7 +1,7 @@
 
 ---
 title:  "切線と重解の関係（図形的直感による理解）"
-description: "Relationship between multiple roots of a polynomial and its derivative"
+description: "Tangents_multiple solutions.md"
 pubDate: "2026-01-26"
 tags: "方程式と図形"
 ---

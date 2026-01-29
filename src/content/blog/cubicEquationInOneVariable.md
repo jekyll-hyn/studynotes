@@ -1,6 +1,6 @@
 ---
 title:  "極値が0の意味と一元三次方程の実数解の個数 ― 判定の考え方"
-description: "Number of real solutions to a cubic equation in one variable"
+description: "cubicEquationInOneVariable.md"
 pubDate: "2026-01-29"
 tags: "方程式と図形"
 ---

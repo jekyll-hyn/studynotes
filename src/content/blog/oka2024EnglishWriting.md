@@ -1,6 +1,6 @@
 ---
 title: "岡山大学2024英作文"
-description: ""
+description: "Oka2024EnglishWriting.md"
 pubDate: "2026-01-21"
 tags: "English,岡大"
 ---

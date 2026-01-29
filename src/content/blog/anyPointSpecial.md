@@ -1,6 +1,6 @@
 ---
 title:  "任意点恒等式の利用"
-description: "How to handle the distance squared equation that holds for any point"
+description: "anyPointSpecial"
 pubDate: "2026-01-29"
 tags: "方程式と図形"
 ---

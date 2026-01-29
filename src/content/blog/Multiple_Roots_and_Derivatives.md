@@ -1,6 +1,6 @@
 ---
 title: "多項式の重解は，導関数の解であり，元の関数の重解でもある"
-description: "Relationship between multiple roots of a polynomial and its derivative"
+description: "Multiple_Roots_and_Derivatives"
 pubDate: "2026-01-26"
 tags: "微積分"
 ---

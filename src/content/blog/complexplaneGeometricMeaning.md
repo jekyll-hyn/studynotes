@@ -1,6 +1,6 @@
 ---
 title: "複素平面における式の幾何学的意味まとめ"
-description: "複素数の式を見た瞬間に図形が思い浮かぶための整理"
+description: "complexplaneGeometricMeaning"
 pubDate: "2026-01-27"
 tags: "複素平面"
 ---

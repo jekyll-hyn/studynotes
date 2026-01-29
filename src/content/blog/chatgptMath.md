@@ -1,6 +1,6 @@
 ---
 title: "ChatGpt で数学のprompt"
-description: "How to make a score by AI"
+description: "chatgptMath"
 pubDate: "2026-01-26"
 tags: "AI"
 ---

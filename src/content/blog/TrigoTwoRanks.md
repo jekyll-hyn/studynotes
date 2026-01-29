@@ -1,6 +1,6 @@
 ---
 title: "三角関数 A降冪公式　B長さ関連"
-description: ""
+description: "TrigoTwoRanks"
 pubDate: "2026-01-21"
 tags: "Math,三角関数"
 ---
