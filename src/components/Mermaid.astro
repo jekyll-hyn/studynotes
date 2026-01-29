@@ -7,20 +7,20 @@
 
 <script is:inline>
   (function() {
-    console.log('Mermaid initialization started');
+    //console.log('Mermaid initialization started');
     
     // 初始化函数
     function initMermaid() {
-      console.log('Checking for mermaid library...');
+      //console.log('Checking for mermaid library...');
       
       // 检查 mermaid 是否已加载
       if (typeof mermaid === 'undefined') {
-        console.warn('Mermaid not loaded yet, retrying in 100ms...');
-        setTimeout(initMermaid, 100);
+        console.warn('Mermaid not loaded yet, retrying in 50ms...');
+        setTimeout(initMermaid, 10);
         return;
       }
       
-      console.log('Mermaid library found, initializing...');
+      //console.log('Mermaid library found, initializing...');
       
       try {
         // 初始化配置
@@ -34,35 +34,35 @@
           }
         });
         
-        console.log('Mermaid initialized successfully');
+        //console.log('Mermaid initialized successfully');
         
         // 转换所有 mermaid 代码块
         convertAndRenderMermaid();
       } catch (error) {
-        console.error('Error initializing mermaid:', error);
+        //console.error('Error initializing mermaid:', error);
       }
     }
     
     // 转换和渲染函数
     function convertAndRenderMermaid() {
-      console.log('Looking for mermaid blocks...');
+      //console.log('Looking for mermaid blocks...');
       
       // 查找所有 .mermaid div（已经转换好的）
       const mermaidDivs = document.querySelectorAll('div.mermaid');
-      console.log(`Found ${mermaidDivs.length} mermaid divs`);
+      //console.log(`Found ${mermaidDivs.length} mermaid divs`);
       
       if (mermaidDivs.length > 0) {
         // 直接渲染已有的 .mermaid div
-        console.log('Rendering mermaid charts...');
+        //console.log('Rendering mermaid charts...');
         try {
           mermaid.init(undefined, mermaidDivs);
-          console.log('Mermaid charts rendered successfully');
+          //console.log('Mermaid charts rendered successfully');
         } catch (error) {
-          console.error('Error rendering mermaid charts:', error);
+          //console.error('Error rendering mermaid charts:', error);
         }
       } else {
         // 如果没有找到 .mermaid div，尝试从 pre 元素转换
-        console.log('No mermaid divs found, looking for pre elements...');
+        //console.log('No mermaid divs found, looking for pre elements...');
         convertPreToMermaid();
       }
     }
@@ -77,7 +77,7 @@
       
       selectors.forEach(selector => {
         const elements = document.querySelectorAll(selector);
-        console.log(`Found ${elements.length} elements with selector: ${selector}`);
+        //console.log(`Found ${elements.length} elements with selector: ${selector}`);
         
         elements.forEach((code, index) => {
           const text = code.textContent || code.innerText;
@@ -90,7 +90,7 @@
             const pre = code.closest('pre');
             if (!pre || pre.dataset.processed === 'true') return;
             
-            console.log(`Converting pre element ${index + 1} to mermaid div`);
+            //console.log(`Converting pre element ${index + 1} to mermaid div`);
             
             const div = document.createElement('div');
             div.className = 'mermaid';
@@ -105,11 +105,11 @@
       // 重新检查并渲染
       const newMermaidDivs = document.querySelectorAll('div.mermaid');
       if (newMermaidDivs.length > 0) {
-        console.log(`Now found ${newMermaidDivs.length} mermaid divs, rendering...`);
+        //console.log(`Now found ${newMermaidDivs.length} mermaid divs, rendering...`);
         try {
           mermaid.init(undefined, newMermaidDivs);
         } catch (error) {
-          console.error('Error rendering converted charts:', error);
+          //console.error('Error rendering converted charts:', error);
         }
       }
     }
@@ -117,7 +117,7 @@
     // 页面加载完成后执行
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOM fully loaded, starting mermaid initialization');
+        //console.log('DOM fully loaded, starting mermaid initialization');
         setTimeout(initMermaid, 100);
       });
     } else {
@@ -127,7 +127,7 @@
     
     // 备用：窗口加载完成后也检查
     window.addEventListener('load', () => {
-      console.log('Window fully loaded, checking mermaid again');
+      //console.log('Window fully loaded, checking mermaid again');
       setTimeout(initMermaid, 500);
     });
     
