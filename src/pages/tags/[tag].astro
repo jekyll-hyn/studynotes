@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout3p.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
+  const allPosts = await getCollection("blog");
   const tagCount = new Map<string, number>();
 
-  allPosts.forEach(post => {
+  allPosts.forEach((post) => {
     post.data.tags?.forEach((tag: string) => {
       tagCount.set(tag, (tagCount.get(tag) ?? 0) + 1);
     });
@@ -26,23 +26,28 @@ export interface Props {
 const { tagName, count } = Astro.props;
 const { tag } = Astro.params;
 
-const allPosts = await getCollection('blog');
-const filteredPosts = allPosts.filter(post =>
-  post.data.tags?.includes(tag)
-);
+const allPosts = await getCollection("blog");
+const filteredPosts = allPosts
+  .filter(post => post.data.tags?.includes(tag))
+  .sort((a, b) => {
+    return new Date(b.data.pubDate).getTime()
+         - new Date(a.data.pubDate).getTime();
+  });
 ---
 
 <BaseLayout>
-  <h5> The {tagName} has {count} blogs. The list is below:</h5>
-
+  <h5>The {tagName} has {count} blogs. The list is below:</h5>
   <ul class="tag-right-ul">
-    {filteredPosts.map(post => (
-      <li>
-        <a href={`/blog/${post.id}`}>
-          {post.data.title}
-        </a>
-      </li>
-    ))}
+    {
+      filteredPosts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>            
+           {post.data.title} — 
+          <span class="post-date">
+              {post.data.pubDate.toISOString().slice(0, 10)}
+            </span></a>
+        </li>
+      ))
+    }
   </ul>
 </BaseLayout>
-
