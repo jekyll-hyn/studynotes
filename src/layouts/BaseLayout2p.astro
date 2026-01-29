@@ -16,15 +16,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<script type="importmap">
-			{
-			"imports": {
-				"mermaid": "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
-				// Or if you are serving it locally, e.g.:
-				// "mermaid": "/path/to/your/local/mermaid.esm.min.mjs"
-			}
-			}
-		</script>
 		<title>Smart Study</title>
 		<BaseHead title={title} description={description} />
 		<style>

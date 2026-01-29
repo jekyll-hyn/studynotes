@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
-      langs: [], // 不额外加载 mermaid 语言
+      langs: [], // specify extra languages here
     },
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],

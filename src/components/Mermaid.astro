@@ -1,32 +1,162 @@
 ---
-import mermaid from "mermaid";
-
-mermaid.initialize({
-  startOnLoad: false,
-});
+// 空 frontmatter
 ---
 
-<script type="module">
-  import mermaid from "mermaid";
+<!-- 从 CDN 加载 Mermaid -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
 
-  mermaid.initialize({
-    startOnLoad: false,
-    theme: "default",
-  });
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    document
-      .querySelectorAll("pre[data-language='mermaid']")
-      .forEach(pre => {
-        const div = document.createElement("div");
-        div.className = "mermaid";
-        div.textContent = pre.innerText;
-        pre.replaceWith(div);
+<script is:inline>
+  (function() {
+    console.log('Mermaid initialization started');
+    
+    // 初始化函数
+    function initMermaid() {
+      console.log('Checking for mermaid library...');
+      
+      // 检查 mermaid 是否已加载
+      if (typeof mermaid === 'undefined') {
+        console.warn('Mermaid not loaded yet, retrying in 100ms...');
+        setTimeout(initMermaid, 100);
+        return;
+      }
+      
+      console.log('Mermaid library found, initializing...');
+      
+      try {
+        // 初始化配置
+        mermaid.initialize({
+          startOnLoad: false, // 我们手动控制
+          theme: 'default',
+          securityLevel: 'loose',
+          flowchart: {
+            htmlLabels: true,
+            curve: 'basis'
+          }
+        });
+        
+        console.log('Mermaid initialized successfully');
+        
+        // 转换所有 mermaid 代码块
+        convertAndRenderMermaid();
+      } catch (error) {
+        console.error('Error initializing mermaid:', error);
+      }
+    }
+    
+    // 转换和渲染函数
+    function convertAndRenderMermaid() {
+      console.log('Looking for mermaid blocks...');
+      
+      // 查找所有 .mermaid div（已经转换好的）
+      const mermaidDivs = document.querySelectorAll('div.mermaid');
+      console.log(`Found ${mermaidDivs.length} mermaid divs`);
+      
+      if (mermaidDivs.length > 0) {
+        // 直接渲染已有的 .mermaid div
+        console.log('Rendering mermaid charts...');
+        try {
+          mermaid.init(undefined, mermaidDivs);
+          console.log('Mermaid charts rendered successfully');
+        } catch (error) {
+          console.error('Error rendering mermaid charts:', error);
+        }
+      } else {
+        // 如果没有找到 .mermaid div，尝试从 pre 元素转换
+        console.log('No mermaid divs found, looking for pre elements...');
+        convertPreToMermaid();
+      }
+    }
+    
+    // 从 pre 元素转换的函数
+    function convertPreToMermaid() {
+      const selectors = [
+        'pre code.language-mermaid',
+        'pre[data-language="mermaid"] code',
+        'pre code'
+      ];
+      
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        console.log(`Found ${elements.length} elements with selector: ${selector}`);
+        
+        elements.forEach((code, index) => {
+          const text = code.textContent || code.innerText;
+          const isMermaid = text.includes('flowchart') || 
+                           text.includes('graph TD') ||
+                           text.includes('graph LR') ||
+                           code.className.includes('language-mermaid');
+          
+          if (isMermaid) {
+            const pre = code.closest('pre');
+            if (!pre || pre.dataset.processed === 'true') return;
+            
+            console.log(`Converting pre element ${index + 1} to mermaid div`);
+            
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = text;
+            
+            pre.dataset.processed = 'true';
+            pre.parentNode.replaceChild(div, pre);
+          }
+        });
       });
-
-    await mermaid.run({
-      querySelector: ".mermaid",
+      
+      // 重新检查并渲染
+      const newMermaidDivs = document.querySelectorAll('div.mermaid');
+      if (newMermaidDivs.length > 0) {
+        console.log(`Now found ${newMermaidDivs.length} mermaid divs, rendering...`);
+        try {
+          mermaid.init(undefined, newMermaidDivs);
+        } catch (error) {
+          console.error('Error rendering converted charts:', error);
+        }
+      }
+    }
+    
+    // 页面加载完成后执行
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM fully loaded, starting mermaid initialization');
+        setTimeout(initMermaid, 100);
+      });
+    } else {
+      console.log('DOM already loaded, starting mermaid initialization');
+      setTimeout(initMermaid, 100);
+    }
+    
+    // 备用：窗口加载完成后也检查
+    window.addEventListener('load', () => {
+      console.log('Window fully loaded, checking mermaid again');
+      setTimeout(initMermaid, 500);
     });
-  });
+    
+  })();
 </script>
 
+<style>
+  .mermaid {
+    margin: 2rem 0;
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-height: 200px; /* 确保有足够空间 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* 隐藏已经被处理过的 pre 元素 */
+  pre[data-processed="true"] {
+    display: none !important;
+  }
+</style>
