@@ -10,9 +10,6 @@ export default defineConfig({
   site: "https://studynotes.jekyllhyn.workers.dev/",
   integrations: [sitemap()],
   markdown: {
-    shikiConfig: {
-      langs: [], // specify extra languages here
-    },
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
