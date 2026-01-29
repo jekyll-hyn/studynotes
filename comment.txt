@@ -21,6 +21,8 @@ npm install -D wrangler
 
 npm install astro
 npm install remark-math rehype-katex
+npm install mermaid
+
 npx astro preferences disable devToolbar
 
 npx astro dev
