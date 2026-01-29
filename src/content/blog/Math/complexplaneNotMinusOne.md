@@ -1,6 +1,6 @@
 ---
 title: "z^8 = 1,なぜ「−1 = −cos0 − i sin0」から解き始めてはいけないのか "
-description: "complexplaneNotMinusOne.md"
+description: "Math/complexplaneNotMinusOne.md"
 pubDate: "2026-01-28"
 tags: "複素平面"
 ---

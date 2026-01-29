@@ -1,6 +1,6 @@
 ---
 title:  "任意点恒等式の利用"
-description: "anyPointSpecial.md"
+description: "Math/anyPointSpecial.md"
 pubDate: "2026-01-29"
 tags: "方程式と図形"
 ---

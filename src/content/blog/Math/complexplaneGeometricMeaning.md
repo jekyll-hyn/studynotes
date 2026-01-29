@@ -1,6 +1,6 @@
 ---
 title: "複素平面における式の幾何学的意味まとめ"
-description: "complexplaneGeometricMeaning.md"
+description: "Math/complexplaneGeometricMeaning.md"
 pubDate: "2026-01-27"
 tags: "複素平面"
 ---

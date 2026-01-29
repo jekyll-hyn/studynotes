@@ -1,6 +1,6 @@
 ---
 title: "三角関数の三倍角公式のまとめ"
-description: "TrigoFormatters"
+description: "Math/TrigoFormatters"
 pubDate: "2026-01-23"
 tags: "Math,三角関数"
 ---

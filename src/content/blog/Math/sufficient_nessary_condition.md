@@ -1,6 +1,6 @@
 ---
 title: "充分条件・必要条件・充要条件"
-description: "sufficient_nessary_condition.md"
+description: "Math/sufficient_nessary_condition.md"
 pubDate: "2026-01-23"
 tags: "Math,数学論理"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "三角関数の合成・変形条件まとめ"
-description: "TrigoHowConbi.md"
+description: "Math/TrigoHowConbi.md"
 pubDate: "2026-01-20"
 tags: "Math,三角関数"
 ---
