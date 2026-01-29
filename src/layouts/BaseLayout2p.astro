@@ -59,8 +59,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.title h4 {
+				display: inline;   /* h4 不独占一行 */
+			}
 			.description {
-				display: block;          /* 让 span 独占一行 */
+				display: inline;         /* 让 span 独占一行 */
 				text-align: center;      /* 居中 */
 				margin-top: 0.4em;
 
@@ -86,11 +89,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<h4>{title}</h4>
+						<h4>{title} </h4><span class="description"> - {description} </span>
 					</div>
-                    <span class="description">
-						- {description}
-					</span>
+
 					<slot />
 				</div>
 			</article>
