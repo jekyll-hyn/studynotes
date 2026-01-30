@@ -1,6 +1,6 @@
 ---
-title: "ChatGpt で数学のprompt"
-description: "Math prompt with ChatGpt"
+title: "ChatGpt で物理のprompt"
+description: "Physics prompt with ChatGpt"
 pubDate: "2026-01-26"
 tags: "AI"
 ---
@@ -15,7 +15,7 @@ tags: "AI"
 - 内容主题：【???】
 - 说明语言：**日文**
 - 用途：**日本高中～大学入试笔记**
-- 输出形式：**单一 Markdown 文件**
+- 输出形式：**单一 Markdown 文件，可直接整体 copy**
 - すべての LaTeX 数式を $$ ... $$ で統一
 - 最後には覚え方を追加
 ---
