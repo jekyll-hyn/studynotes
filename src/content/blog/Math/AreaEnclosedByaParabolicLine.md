@@ -2,7 +2,7 @@
 title: "1 / 6 公式, 抛物线と直線に囲まれた面積"
 description: "useGraphPlot"
 pubDate: "2026-01-30"
-tags: "微積分"
+tags: "微積分,方程式と図形"
 ---
 
 <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;transform: scale(0.5); transform-origin: top center;">
