@@ -1,6 +1,6 @@
 ---
 title: "ChatGpt で数学のprompt"
-description: "Math/chatgptMath.md"
+description: "Math prompt with ChatGpt"
 pubDate: "2026-01-26"
 tags: "AI"
 ---

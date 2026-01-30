@@ -9,8 +9,8 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Mermaid from "../components/Mermaid.astro";
 
 type Props = CollectionEntry<'blog'>['data'];
-
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { slug } = Astro.params;
 ---
 
 <html lang="zh-CN">
@@ -89,7 +89,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<h4>{title} </h4><span class="description"> - {description} </span>
+						<h4>{title} </h4><span class="description"> - {slug} </span>
 					</div>
 
 					<slot />

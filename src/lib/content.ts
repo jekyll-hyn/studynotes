@@ -3,6 +3,14 @@ import { getCollection } from "astro:content";
 
 export async function getAllPosts() {
   const posts = await getCollection("blog");
+  return posts.map(p => ({
+    slug: p.slug || "dummy-slug",
+    title: p.data?.title || "Untitled",
+    description: p.data?.description || "No description",
+    date: p.data?.date || new Date(),
+    tags: p.data?.tags || [{ name: "none" }]
+  }));
+}
 
   // console.log(
   //   "[getAllPosts] blogs =",
@@ -25,12 +33,6 @@ export async function getAllPosts() {
   //   }
   // });
 
-  return posts.map(p => ({
-    slug: p.slug || "dummy-slug",
-    title: p.data?.title || "Untitled",
-    description: p.data?.description || "No description",
-    date: p.data?.date || new Date(),
-    tags: p.data?.tags || [{ name: "none" }]
-  }));
-}
+
+
 
