@@ -218,8 +218,7 @@ pre>code {
 .prose table,
 .prose th,
 .prose td {
-  border: 1px solid rgb(var(--gray-dark));
-  /* 可改颜色 */
+  border: 1px solid rgb(var(--gray));
 }
 
 .prose pre.astro-code {
