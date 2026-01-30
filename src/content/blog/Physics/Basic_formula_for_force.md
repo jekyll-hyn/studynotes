@@ -1,7 +1,7 @@
 ---
 title: "力の基本公式まとめ"
-description: "Physics prompt with ChatGpt"
-pubDate: "2026-01-26"
+description: "basic_formula_for_force"
+pubDate: "2026-01-31"
 tags: "物理"
 ---
 
